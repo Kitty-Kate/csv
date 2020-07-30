@@ -1,0 +1,22 @@
+/*@font-face {
+  font-family: 'Roboto';
+  src: url(../fonts/Roboto-Regular.ttf)
+}
+
+@import 'variables';*/
+
+html {
+  font-size: $root-font-size;
+  font-family: $font-family;
+  max-width: $page-width;
+  margin: 0 auto;
+  text-align: center;
+  background-color: ;
+}
+
+
+#drop-area {
+	border: 5px solid blue;
+	width:  500px;
+	height: 300px;	
+}
