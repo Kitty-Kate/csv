@@ -18,6 +18,24 @@ module.exports = merge(common, {
    */
   devtool: 'inline-source-map',
 
+  module: {
+    rules: [
+      /**
+       * Styles
+       *
+       * Inject CSS into the head with source maps.
+       */
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
+          { loader: 'postcss-loader', options: { sourceMap: true } }
+        ],
+      },
+    ],
+  },
+
   /**
    * DevServer
    *

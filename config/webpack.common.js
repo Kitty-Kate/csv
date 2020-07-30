@@ -36,25 +36,11 @@ module.exports = {
     new CleanWebpackPlugin(),
 
     /**
-     * CopyWebpackPlugin
-     *
-     * Copies files from target to destination folder.
-     */
-    new CopyWebpackPlugin([
-      {
-        from: paths.static,
-        to: 'assets',
-        ignore: ['*.DS_Store'],
-      },
-    ]),
-
-    /**
      * HtmlWebpackPlugin
      *
      * Generates an HTML file from a template.
      */
     new HtmlWebpackPlugin({
-      title: 'Webpack Boilerplate',
       favicon: paths.static + '/favicon.png',
       template: paths.static + '/index.html', // template file
       filename: 'index.html', // output file
@@ -77,20 +63,6 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: ['babel-loader', 'eslint-loader'],
-      },
-
-      /**
-       * Styles
-       *
-       * Inject CSS into the head with source maps.
-       */
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
-          { loader: 'postcss-loader', options: { sourceMap: true } }
-        ],
       },
 
       /**
